@@ -23,35 +23,35 @@ describe('Quotes Reducer', () => {
     })).to.deep.equal([quote]);
   });
 
-  it('should handle REMOVE_QUOTE', () => {
-    const firstId = uuid();
-    const secondId = uuid();
-    const initialState = [
-      {
-        id: firstId,
-        content: 'Moral indignation is jealousy with a halo.',
-        author: 'H.G. Wells',
-        votes: 0
-      }, {
-        id: secondId,
-        content: 'The artist is nothing without the gift, but the gift is nothing without work.',
-        author: 'Emile Zola',
-        votes: 0
-      }
-    ];
-
-    expect(reducer(initialState, {
-      type: 'REMOVE_QUOTE',
-      quoteId: firstId
-    })).to.deep.equal([
-      {
-        id: secondId,
-        content: 'The artist is nothing without the gift, but the gift is nothing without work.',
-        author: 'Emile Zola',
-        votes: 0
-      }
-    ]);
-  });
+  // it('should handle REMOVE_QUOTE', () => {
+  //   const firstId = uuid();
+  //   const secondId = uuid();
+  //   const initialState = [
+  //     {
+  //       id: firstId,
+  //       content: 'Moral indignation is jealousy with a halo.',
+  //       author: 'H.G. Wells',
+  //       votes: 0
+  //     }, {
+  //       id: secondId,
+  //       content: 'The artist is nothing without the gift, but the gift is nothing without work.',
+  //       author: 'Emile Zola',
+  //       votes: 0
+  //     }
+  //   ];
+  //
+  //   expect(reducer(initialState, {
+  //     type: 'REMOVE_QUOTE',
+  //     quoteId: firstId
+  //   })).to.deep.equal([
+  //     {
+  //       id: secondId,
+  //       content: 'The artist is nothing without the gift, but the gift is nothing without work.',
+  //       author: 'Emile Zola',
+  //       votes: 0
+  //     }
+  //   ]);
+  // });
 
   it("should handle UPVOTE_QUOTE", () => {
     const firstId = uuid();
