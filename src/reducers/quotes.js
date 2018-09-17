@@ -6,14 +6,7 @@ export default (state = [], action) => {
     case "ADD_QUOTE" :
       return [...state, action.quote]
     case "REMOVE_QUOTE" :
-      let quote = state.filter(quote => quote.id === action.quoteId)
-      let idx = state.indexOf(quote)
-      if (idx > -1) {
-        state.splice(idx, 1)
-      } else if (idx === -1) {
-        state.shift()
-      }
-      return state
+      return state.filter(quote => quote.id !== action.quoteId)
     case "UPVOTE_QUOTE" :
       let newState = state.map(quote => {
         if (quote.id === action.quoteId) {

@@ -22,7 +22,6 @@ class QuoteForm extends Component {
     // Create quote object from state
     // Pass quote object to action creator
     // Update component state to return to default state
-    debugger
     this.props.addQuote({id: uuid(), content: this.state.content, author: this.state.author, votes: 0})
     event.target.reset()
     this.setState({
